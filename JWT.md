@@ -1,17 +1,17 @@
-# 1. How JWT Authentication Works:
+# How JWT Authentication Works:
 
 JWT (JSON Web Token) is a compact, URL-safe means of representing claims to be transferred between two parties. The claims in a JWT are encoded as a JSON object that is digitally signed using JSON Web Signature (JWS).
 
 A typical JWT authentication flow:
 
-a) User logs in with credentials (username/password).
-b) Server verifies credentials and generates a JWT.
-c) Server sends the JWT back to the client.
-d) Client stores the JWT (typically in local storage or a cookie).
-e) For subsequent requests, the client includes the JWT in the Authorization header.
-f) Server validates the JWT for each request and grants access if valid.
+1) User logs in with credentials (username/password).
+2) Server verifies credentials and generates a JWT.
+3) Server sends the JWT back to the client.
+4) Client stores the JWT (typically in local storage or a cookie).
+5) For subsequent requests, the client includes the JWT in the Authorization header.
+6) Server validates the JWT for each request and grants access if valid.
 
-# 2. Problems JWT Solves:
+# Problems JWT Solves:
 
 - Statelessness: Unlike session-based authentication, JWT doesn't require server-side storage of session information.
 - Scalability: It's easier to scale applications as authentication can be handled by any server with the correct signing key.
@@ -19,7 +19,7 @@ f) Server validates the JWT for each request and grants access if valid.
 - Mobile-friendly: Works well for native mobile apps where cookie-based auth can be problematic.
 - Decoupled / Microservices: Allows for decoupled authentication in microservices architectures.
 
-# 3. Implementing JWT Authentication:
+# Implementing JWT Authentication:
 
 Here's a basic implementation using Node.js and Express:
 
@@ -66,7 +66,7 @@ function authenticateToken(req, res, next) {
 app.listen(3000, () => console.log('Server running on port 3000'));
 ```
 
-# 4. Securing JWT Implementation:
+# Securing JWT Implementation:
 
 a) Use strong secret keys: Use a strong, unique secret key for signing tokens.
 
